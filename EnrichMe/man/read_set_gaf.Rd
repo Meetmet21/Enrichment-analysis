@@ -9,13 +9,16 @@ read_set_gaf(gaf, aspect)
 \arguments{
 \item{gaf}{a gaf file}
 
-\item{aspect}{one of the GO aspect :"C" : Cellulare component "P" : Biological process "M" : Molecular function}
+\item{aspect}{one of the GO aspect :"C" : Cellular component "P" : Biological process "M" : Molecular function}
 }
 \value{
-a data frame containing sets with their corresponding gene symbols.
+a data frame containing sets with their corresponding gene symbols. Columns: gs_name, gene_symbol.
 }
 \description{
-This function reads .gaf file and format it to be used analysis functions for a given GO aspect.
+This function reads .gaf file and format it to be used by analysis functions for a given GO aspect.
+}
+\details{
+This function also maps GO ids to their corresponding terms with the AnnotationDbi package via mapIds function.
 }
 \examples{
 gaf <- data(gaf_file)

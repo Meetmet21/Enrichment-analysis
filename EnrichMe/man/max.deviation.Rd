@@ -15,6 +15,10 @@ The maximum deviation from 0 among the values in the table.
 \description{
 This function compute the maximum deviation from 0 of a vector of values.
 }
+\details{
+To compute the maximum deviation from 0, this function first search the maximum and the minimum in the numerical vector (argument : table).
+Then, it compares the max and absolute value of the min and returns the bigger one.
+}
 \examples{
 max.deviation(c(seq(1:10),seq(-13)))
 

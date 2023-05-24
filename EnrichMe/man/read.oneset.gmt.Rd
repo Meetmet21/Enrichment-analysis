@@ -10,7 +10,7 @@ read.oneset.gmt(set)
 \item{set}{One line from .gmt file}
 }
 \value{
-A data frame with the set name and the associated gene symbols
+A data frame with the set name and the associated gene symbol. Columns: gs_name, gene_symbol.
 }
 \description{
 Format one set into a data frame : one set correspond to one line in .gmt format.

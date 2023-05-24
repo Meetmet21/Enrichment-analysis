@@ -2,25 +2,25 @@
 % Please edit documentation in R/visualization.R
 \name{dotplot}
 \alias{dotplot}
-\title{Visualization functions for Enrichment analysis results
-Function to plot a dot plot chart from the odd ration, the Fisher's test p.value and the normalized enrichment score of signficantly enriched èathways.}
+\title{Visualization functions for Enrichment analysis results}
 \usage{
 dotplot(data)
 }
 \arguments{
-\item{data}{the resulting data frame from the multiple_set_analysis function}
+\item{data}{the resulting data frame from the multiple_set_analysis function.}
 }
 \value{
-a dotplot chart summarizing signficant results
+a dotplot chart summarizing significant results.
 }
 \description{
-Visualization functions for Enrichment analysis results
-Function to plot a dot plot chart from the odd ration, the Fisher's test p.value and the normalized enrichment score of signficantly enriched èathways.
+Function to plot a dot plot chart from the odd ration, the Fisher's test p.value and the normalized enrichment score of significantly enriched pathways.
+}
+\details{
+Only p-values lower or equal to 0,05 are represented in the chart.
 }
 \examples{
 ranked.list <- data(ranked.list)
 pathways <- data(pathways)
 data <- multiple_set_analysis(ranked.list, pathways)
 dotplot(data)
-
 }

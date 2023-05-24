@@ -1,9 +1,10 @@
 #' Read one set from .gmt file
 #'
+#' @description
 #' Format one set into a data frame : one set correspond to one line in .gmt format.
 #'
 #' @param set One line from .gmt file
-#' @return A data frame with the set name and the associated gene symbols
+#' @return A data frame with the set name and the associated gene symbol. Columns: gs_name, gene_symbol.
 #' @examples
 #' lines <- readLines("data/ReactomePathways.gmt")
 #' read.oneset.gmt(lines[1])
@@ -17,10 +18,11 @@ read.oneset.gmt <- function(set){
 
 #' Read whole .gmt file
 #'
+#' @description
 #' Read all lines through .gmt file and compute a data frame for each set to finally bind them in one total data frame.
 #'
 #' @param path.file Path for the .gmt file
-#' @return A data frame containing sets with their corresponding gene symbols.
+#' @return A data frame containing sets with their corresponding gene symbols. COlumns: gs_name, gene_symbol
 #' @examples
 #' gmt <- data(gmt_file)
 #' read_set_gmt(gmt)
@@ -32,15 +34,18 @@ read_set_gmt <- function(path.file){
   return(df)
 }
 
-#' Get sets of genes for Homo sapiens from Reactome, Gene ontology and KEGG from the web
+#' Get sets of genes for Homo sapiens
 #'
+#' @description
 #' This function uses different packages to access API of databases in order to retrieve gene sets.
-#' Reactome is accessed from ReactomePA package.
-#' GO terms are downloaded from the gene ontology database for different aspects.
-#' KEGG is accessed with the KEGGREST package
+#' @details
+#' Reactome is accessed from ReactomePA package. To map gene ids to symbols, the mapIds for AnnotationDbi is used and the mapping is made on the Org.Hs.eg.db databse.
+#' GO are accessed from the org.Hs.eg.db with the AnnotationDbi package keys function. Only GO ids are retrieved so they have to be mapped to their corresponding gene symbols with mapIds from AnnotationDbi, also done for GO terms.
+#' KEGG is accessed with the KEGGREST package for the pathways. Than gene ids are mapped to their corresponding symbols with mapIds as before.
+#' All the result are formated into data frames with two columns nammed as "gs_name" and "gene_symbol", All the resulting dataframes are stored in a list.
 #'
 #' @return
-#' A list containing different data frames with gene set symbols and associated genes symbols from the three databases.
+#' A list containing different data frames with gene set symbols and associated genes symbols from the three databases. COlumns: gs_name, gene_symbol.
 #'    \item{[1] Reactome data frame}
 #'    \item{[2] list of data frames containing different aspects for GO terms}
 #'        \item{  [2][1] Cellulare component}
@@ -98,11 +103,15 @@ get_web_sets <- function(){
 
 #' Read .gaf file
 #'
-#' This function reads .gaf file and format it to be used analysis functions for a given GO aspect.
+#' @description
+#' This function reads .gaf file and format it to be used by analysis functions for a given GO aspect.
+#'
+#' @details
+#' This function also maps GO ids to their corresponding terms with the AnnotationDbi package via mapIds function.
 #'
 #' @param gaf a gaf file
-#' @param aspect one of the GO aspect :"C" : Cellulare component "P" : Biological process "M" : Molecular function
-#' @return a data frame containing sets with their corresponding gene symbols.
+#' @param aspect one of the GO aspect :"C" : Cellular component "P" : Biological process "M" : Molecular function
+#' @return a data frame containing sets with their corresponding gene symbols. Columns: gs_name, gene_symbol.
 #' @examples
 #' gaf <- data(gaf_file)
 #' CC <- read_set_gaf(gaf, "C")

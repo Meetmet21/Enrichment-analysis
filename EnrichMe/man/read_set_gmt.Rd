@@ -10,7 +10,7 @@ read_set_gmt(path.file)
 \item{path.file}{Path for the .gmt file}
 }
 \value{
-A data frame containing sets with their corresponding gene symbols.
+A data frame containing sets with their corresponding gene symbols. COlumns: gs_name, gene_symbol
 }
 \description{
 Read all lines through .gmt file and compute a data frame for each set to finally bind them in one total data frame.

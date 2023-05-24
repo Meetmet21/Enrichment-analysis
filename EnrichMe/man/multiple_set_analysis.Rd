@@ -4,26 +4,32 @@
 \alias{multiple_set_analysis}
 \title{Run GSEA and Fisher test from leading-edge subset for multiple sets of object}
 \usage{
-multiple_set_analysis(ranked.list, pathways)
+multiple_set_analysis(ranked.list, pathways, n.perm = 1000)
 }
 \arguments{
 \item{ranked.list}{A ranked list of objects}
 
 \item{pathways}{a data frame containing all sets names as gs_name in one column and the associated objects in another columns as gene_symbol}
+
+\item{n.perm}{The number of permutation test. By default fixed to 1000.}
 }
 \value{
 A data frame with the following columns for each set of object :
-   set = the set name.
-   NES = the normalized ES for the set.
-   p.value = The permutation test nominal pvalue for the ES.
-   odd.ratio = The odd.ratio from the Fisher's test.
-   fp.value = the pvalue of the Fisher's test.
+   \item{set}{The set name.}
+   \item{NES}{The normalized ES for the set.}
+   \item{p.value}{The permutation test nominal p-value for the ES.}
+   \item{odd.ratio}{The odd.ratio from the Fisher's test.}
+   \item{fp.value}{The p-value of the Fisher's test.}
 }
 \description{
-Run GSEA and Fisher test from leading-edge subset for multiple sets of object
+This function is similar to one_set_analysis but generalized to many sets. It also correct the p-values for multiple testing.
+}
+\details{
+The analysis run for each set is the same as the one_set_analysis function, but as many statistical tests are run for all the sets, this function
+correct the p-values by using the build-in function p.adjust with the default method.
 }
 \examples{
-#ranked.list <- readRDS("data/ranked_list.rds)
-#pathways <- readRDS("data/pathways.rds")
+#data(ranked.list)
+#data(pathways)
 #multiple_set_analysis(ranked.list, pathways)
 }
