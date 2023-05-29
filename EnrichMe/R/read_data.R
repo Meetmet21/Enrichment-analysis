@@ -46,12 +46,12 @@ read_set_gmt <- function(path.file){
 #'
 #' @return
 #' A list containing different data frames with gene set symbols and associated genes symbols from the three databases. COlumns: gs_name, gene_symbol.
-#'    \item{[1] Reactome data frame}
-#'    \item{[2] list of data frames containing different aspects for GO terms}
-#'        \item{  [2][1] Cellulare component}
-#'        \item{  [2][2] Biological process}
-#'        \item{  [2][3] Molecular function}
-#'    \item{[3] KEGG data frane}
+#'    \item{}{[1] Reactome data frame}
+#'    \item{}{[2] list of data frames containing different aspects for GO terms}
+#'        \item{}{  [2][1] Cellulare component}
+#'        \item{}{  [2][2] Biological process}
+#'        \item{}{  [2][3] Molecular function}
+#'    \item{}{[3] KEGG data frane}
 #' @examples
 #' res <- get_web_sets()
 #' str(res)
