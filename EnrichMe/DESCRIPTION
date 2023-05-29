@@ -14,12 +14,12 @@ LazyData: true
 data : fatty_acid_metabolism, gaf_file, gmt_file, pathways, ranked.list.
 RoxygenNote: 7.2.3
 Depends: 
-    R (>= 2.10),
+    R (>= 2.10)
     ggplot2
 biocViews:
-  AnnotationDbi,
-  ReactomePA,
-  org.Hs.eg.db,
-  KEGGREST,
+  AnnotationDbi
+  ReactomePA
+  org.Hs.eg.db
+  KEGGREST
   GO.db
   
