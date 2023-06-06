@@ -42,7 +42,7 @@ BiocManager::install(missing.pkgs, update=FALSE)
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+```{r example, warning=FALSE}
 library(EnrichMe)
 
 data("gaf_file")

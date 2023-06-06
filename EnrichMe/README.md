@@ -119,7 +119,7 @@ res
 #> [1] 0
 #> 
 #> $NES
-#> [1] 2.568217
+#> [1] 2.570944
 #> 
 #> $odd.ratio
 #> [1] 1.154181
@@ -182,16 +182,16 @@ res <- multiple_set_analysis(ranked.list, pathways, n.perm = 1000)
 #> Working on : xenobiotic_metabolism
 res[1:10,]
 #>                        set       NES p.value odd.ratio     fp.value
-#> 1             adipogenesis  3.815416   0.001 1.3703704 1.000000e+00
-#> 2      allograft_rejection -5.213565   0.001 2.4289739 1.725015e-07
-#> 3        androgen_response -4.136711   0.026 0.5317493 7.693671e-02
-#> 4             angiogenesis -1.560531   0.090 1.2506296 1.000000e+00
-#> 5          apical_junction -3.907912   0.001 1.5674215 1.105545e-01
-#> 6           apical_surface -2.070019   0.015 1.3902198 1.000000e+00
-#> 7                apoptosis -1.690301   0.077 0.9507728 1.000000e+00
-#> 8     bile_acid_metabolism -3.223684   0.001 1.6720760 3.556853e-01
-#> 9  cholesterol_homeostasis -2.646414   0.001 1.9650680 2.579215e-01
-#> 10             coagulation -2.545811   0.001 1.3590254 1.000000e+00
+#> 1             adipogenesis  4.086839   0.001 1.3703704 1.000000e+00
+#> 2      allograft_rejection -5.182453   0.001 2.4289739 1.725015e-07
+#> 3        androgen_response -3.874674   0.028 0.5317493 7.693671e-02
+#> 4             angiogenesis -1.711296   0.080 1.2506296 1.000000e+00
+#> 5          apical_junction -4.015233   0.001 1.5674215 1.105545e-01
+#> 6           apical_surface -2.100034   0.001 1.3902198 1.000000e+00
+#> 7                apoptosis -1.707881   0.077 0.9507728 1.000000e+00
+#> 8     bile_acid_metabolism -3.239109   0.001 1.6720760 3.556853e-01
+#> 9  cholesterol_homeostasis -2.700616   0.001 1.9650680 2.579215e-01
+#> 10             coagulation -2.678667   0.001 1.3590254 1.000000e+00
 
 #To visualize the multiple set analysis
 dotplot(res)
