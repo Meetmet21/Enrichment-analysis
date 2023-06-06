@@ -25,9 +25,9 @@ Then, it goes through the ranked list of genes and sums the wieghts depedning if
 Finally, it looks through the results of the cumulative sum and returns the maximum value deviating from 0 and it's index in the ranked list of genes.
 }
 \examples{
-#data(ranked.list)
-#data(fatty_acid_metabolism)
-#compute.ES(ranked.list, fatty_acid_metabolism)
+data(ranked.list)
+data(fatty_acid_metabolism)
+compute.ES(ranked.list, fatty_acid_metabolism)
 
 
 }

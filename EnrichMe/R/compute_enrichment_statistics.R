@@ -35,9 +35,9 @@ max.deviation <- function(table){
 #' \item{ES}{The enrichment score for a given set.}
 #' \item{ES.id}{The index of the maximum KS-cumulative sum for a given set (corresepond to the Enrichment score).}
 #' @examples
-#' #data(ranked.list)
-#' #data(fatty_acid_metabolism)
-#' #compute.ES(ranked.list, fatty_acid_metabolism)
+#' data(ranked.list)
+#' data(fatty_acid_metabolism)
+#' compute.ES(ranked.list, fatty_acid_metabolism)
 #'
 #'
 compute.ES <- function(ranked.list, gene.set){
@@ -79,9 +79,9 @@ compute.ES <- function(ranked.list, gene.set){
 #'    \item{odd.ratio}{Odd.ratio from the fisher test.}
 #'    \item{fp.value}{P-value of fisher test.}
 #' @examples
-#' #data(ranked.list)
-#' #data(fatty_acid_metabolism)
-#' #one_set_analysis(ranked.list,fatty_acid_metabolism)
+#' data(ranked.list)
+#' data(fatty_acid_metabolism)
+#' one_set_analysis(ranked.list,fatty_acid_metabolism)
 #' @export
 #'
 #'
@@ -161,9 +161,9 @@ one_set_analysis <- function(ranked.list, gene.set, n.perm = 1000){
 #'    \item{fp.value}{The p-value of the Fisher's test.}
 #' @export
 #' @examples
-#' #data(ranked.list)
-#' #data(pathways)
-#' #multiple_set_analysis(ranked.list, pathways)
+#' data(ranked.list)
+#' data(pathways)
+#' multiple_set_analysis(ranked.list, pathways)
 multiple_set_analysis <- function(ranked.list, pathways, n.perm = 1000){
   res.sets <- lapply(unique(pathways$gs_name),function(set){
     cat("Working on :", set,"\n")
@@ -177,5 +177,6 @@ multiple_set_analysis <- function(ranked.list, pathways, n.perm = 1000){
   final <- Reduce(rbind, res.sets)
   final$fp.value <- p.adjust(final$fp.value)
   final$p.value <- p.adjust(final$p.value)
+  final$p.value <- ifelse(final$p.value == 0, 1/n.perm, final$p.value)
   return(final)
 }

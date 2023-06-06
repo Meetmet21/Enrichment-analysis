@@ -29,7 +29,7 @@ The analysis run for each set is the same as the one_set_analysis function, but 
 correct the p-values by using the build-in function p.adjust with the default method.
 }
 \examples{
-#data(ranked.list)
-#data(pathways)
-#multiple_set_analysis(ranked.list, pathways)
+data(ranked.list)
+data(pathways)
+multiple_set_analysis(ranked.list, pathways)
 }

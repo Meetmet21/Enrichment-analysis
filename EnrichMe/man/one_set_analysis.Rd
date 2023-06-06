@@ -30,7 +30,7 @@ The second part of this function uses the leading-edge subset genes to run a Fis
 taking all the genes before reaching the maximum ES. The two factor compared are the presence of genes from the subset in the set and the presence of genes in the set not from the subset.
 }
 \examples{
-#data(ranked.list)
-#data(fatty_acid_metabolism)
-#one_set_analysis(ranked.list,fatty_acid_metabolism)
+data(ranked.list)
+data(fatty_acid_metabolism)
+one_set_analysis(ranked.list,fatty_acid_metabolism)
 }

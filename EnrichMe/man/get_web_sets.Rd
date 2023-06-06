@@ -8,12 +8,12 @@ get_web_sets()
 }
 \value{
 A list containing different data frames with gene set symbols and associated genes symbols from the three databases. COlumns: gs_name, gene_symbol.
-   \item{[1] Reactome data frame}
-   \item{[2] list of data frames containing different aspects for GO terms}
-       \item{  [2][1] Cellulare component}
-       \item{  [2][2] Biological process}
-       \item{  [2][3] Molecular function}
-   \item{[3] KEGG data frane}
+   \item{-}{[1] Reactome data frame}
+   \item{-}{[2] list of data frames containing different aspects for GO terms}
+       \item{-}{  [2][1] Cellulare component}
+       \item{-}{  [2][2] Biological process}
+       \item{-}{  [2][3] Molecular function}
+   \item{-}{[3] KEGG data frane}
 }
 \description{
 This function uses different packages to access API of databases in order to retrieve gene sets.
