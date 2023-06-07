@@ -1,0 +1,73 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# EnrichMe
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of EnrichMe is to to perform GSEA on a ranked list of objects and set
+    of objects as genes.  The second method to test association between
+    gene set and ranked list of objects is to retrieve the leading-edge
+    subset and then perform a Fisher's exact test.  It also gives the
+    possibility to automatically search set of genes from different
+    database from the web.  Finally, it gives some functions to visualize
+    the result of GSEA.
+
+## Installation
+
+You can install the development version of EnrichMe like so:
+
+``` r
+devtools::install_local("path/to/tar.gz")
+
+#For the get_web_sets function, you need to download extra packages #from Bioconductior with the BiocManager package (already present #in the dependency) 
+missing.pkgs <- c("AnnotationDbi","GO.db","ReactomePA","KEGGREST","org.Hs.eg.db","reactome.db")
+BiocManager::install(missing.pkgs, update=FALSE)
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example, warning=FALSE}
+library(EnrichMe)
+
+data("gaf_file")
+data("gmt_file")
+#If you have your own set lists
+sets <- read_set_gmt(gmt_file)
+str(sets)
+#Is using gaf format
+sets <- read_set_gaf(gaf_file, "C")
+str(sets)
+#If you have no sets
+sets <- get_web_sets()
+str(sets)
+
+data("ranked.list")
+data("fatty_acid_metabolism")
+#If you want to enrich one particular set
+res <- one_set_analysis(ranked.list, fatty_acid_metabolism, n.perm = 1000)
+res
+
+#If you want to enrich multiple sets
+data("pathways")
+res <- multiple_set_analysis(ranked.list, pathways, n.perm = 1000)
+res[1:10,]
+
+#To visualize the multiple set analysis
+dotplot(res)
+```
