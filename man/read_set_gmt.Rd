@@ -16,6 +16,6 @@ A data frame containing sets with their corresponding gene symbols. COlumns: gs_
 Read all lines through .gmt file and compute a data frame for each set to finally bind them in one total data frame.
 }
 \examples{
-gmt <- data(gmt_file)
-read_set_gmt(gmt)
+data(gmt_file)
+read_set_gmt(gmt_file)
 }

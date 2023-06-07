@@ -19,8 +19,8 @@ Function to plot a dot plot chart from the odd ration, the Fisher's test p.value
 Only p-values lower or equal to 0,05 are represented in the chart.
 }
 \examples{
-ranked.list <- data(ranked.list)
-pathways <- data(pathways)
+data(ranked.list)
+data(pathways)
 data <- multiple_set_analysis(ranked.list, pathways)
 dotplot(data)
 }

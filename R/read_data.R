@@ -25,7 +25,7 @@ read.oneset.gmt <- function(set){
 #' @return A data frame containing sets with their corresponding gene symbols. COlumns: gs_name, gene_symbol
 #' @examples
 #' data(gmt_file)
-#' read_set_gmt(gm_file)
+#' read_set_gmt(gmt_file)
 #' @export
 #'
 read_set_gmt <- function(path.file){
@@ -114,9 +114,9 @@ get_web_sets <- function(){
 #' @return a data frame containing sets with their corresponding gene symbols. Columns: gs_name, gene_symbol.
 #' @examples
 #' data(gaf_file)
-#' CC <- read_set_gaf(gaf_file, "C")
-#' MF <- read_set_gaf(gaf_file, "M")
-#' BP <- read_set_gaf(gaf_file, "P")
+#' read_set_gaf(gaf_file, "C")
+#' read_set_gaf(gaf_file, "M")
+#' read_set_gaf(gaf_file, "P")
 #' @export
 read_set_gaf <- function(gaf, aspect){
   #Reads lines from .gaf file

@@ -21,8 +21,8 @@ This function reads .gaf file and format it to be used by analysis functions for
 This function also maps GO ids to their corresponding terms with the AnnotationDbi package via mapIds function.
 }
 \examples{
-gaf <- data(gaf_file)
-CC <- read_set_gaf(gaf, "C")
-MF <- read_set_gaf(gaf, "M")
-BP <- read_set_gaf(gaf, "P")
+data(gaf_file)
+read_set_gaf(gaf_file, "C")
+read_set_gaf(gaf_file, "M")
+read_set_gaf(gaf_file, "P")
 }
