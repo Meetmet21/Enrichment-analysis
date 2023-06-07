@@ -24,8 +24,8 @@ read.oneset.gmt <- function(set){
 #' @param path.file Path for the .gmt file
 #' @return A data frame containing sets with their corresponding gene symbols. COlumns: gs_name, gene_symbol
 #' @examples
-#' gmt <- data(gmt_file)
-#' read_set_gmt(gmt)
+#' data(gmt_file)
+#' read_set_gmt(gm_file)
 #' @export
 #'
 read_set_gmt <- function(path.file){
@@ -113,10 +113,10 @@ get_web_sets <- function(){
 #' @param aspect one of the GO aspect :"C" : Cellular component "P" : Biological process "M" : Molecular function
 #' @return a data frame containing sets with their corresponding gene symbols. Columns: gs_name, gene_symbol.
 #' @examples
-#' gaf <- data(gaf_file)
-#' CC <- read_set_gaf(gaf, "C")
-#' MF <- read_set_gaf(gaf, "M")
-#' BP <- read_set_gaf(gaf, "P")
+#' data(gaf_file)
+#' CC <- read_set_gaf(gaf_file, "C")
+#' MF <- read_set_gaf(gaf_file, "M")
+#' BP <- read_set_gaf(gaf_file, "P")
 #' @export
 read_set_gaf <- function(gaf, aspect){
   #Reads lines from .gaf file
