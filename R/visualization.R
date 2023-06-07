@@ -8,8 +8,8 @@
 #' @param data the resulting data frame from the multiple_set_analysis function.
 #' @return a dotplot chart summarizing significant results.
 #' @examples
-#' ranked.list <- data(ranked.list)
-#' pathways <- data(pathways)
+#' data(ranked.list)
+#' data(pathways)
 #' data <- multiple_set_analysis(ranked.list, pathways)
 #' dotplot(data)
 #' @export
