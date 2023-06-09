@@ -32,7 +32,7 @@ You can install the development version of EnrichMe like so:
 
 ``` r
 devtools::install_local("path/to/tar.gz")
-
+devtools::install_github("Meetmet21/Enrichment-analysis")
 #For the get_web_sets function, you need to download extra packages #from Bioconductior with the BiocManager package (already present #in the dependency) 
 missing.pkgs <- c("AnnotationDbi","GO.db","ReactomePA","KEGGREST","org.Hs.eg.db","reactome.db")
 BiocManager::install(missing.pkgs, update=FALSE)
