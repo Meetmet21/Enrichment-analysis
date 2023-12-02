@@ -6,13 +6,13 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of EnrichMe is to to perform GSEA on a ranked list of objects
-and set of objects as genes. The second method to test association
-between gene set and ranked list of objects is to retrieve the
-leading-edge subset and then perform a Fisher’s exact test. It also
-gives the possibility to automatically search set of genes from
-different database from the web. Finally, it gives some functions to
-visualize the result of GSEA.
+The goal of EnrichMe is to to perform a GSEA (Gene Set Enrichment 
+Analysis) test on a ranked list of objects and set of objects as genes. 
+The second method in this package, tests association between gene set 
+and ranked list of objects by retrieving the leading-edge subset and 
+performing a Fisher’s exact test. It also gives the possibility to 
+automatically search set of genes from different database on the web. 
+Finally, it gives few functions to visualize the result of GSEA.
 
 ## Installation
 
