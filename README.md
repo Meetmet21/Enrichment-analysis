@@ -12,7 +12,7 @@ The second method in this package, tests association between gene set
 and ranked list of objects by retrieving the leading-edge subset and 
 performing a Fisher’s exact test. It also gives the possibility to 
 automatically search set of genes from different database on the web. 
-Finally, it gives few functions to visualize the result of GSEA.
+Finally, It gives also few functions to visualize the result of GSEA.
 
 ## Installation
 
